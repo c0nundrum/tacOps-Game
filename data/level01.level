@@ -1,0 +1,26 @@
+[level]
+tileset = Tileset01.png
+map = ..........########
+      .####.....#.......
+      .#...#....#.......
+      .#...#....#..h....
+      .####.....#.......
+      ..........########
+
+[.]
+name = floor
+tile = 0, 0
+
+[#]
+name = wall
+wall = true
+block = true
+tile = 0, 6
+
+[h]
+name = hole
+tile = 6, 10
+
+[l]
+name = teste
+tile = 7, 11
