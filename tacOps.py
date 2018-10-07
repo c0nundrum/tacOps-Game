@@ -35,11 +35,13 @@ def load_tile_table(name, width, height): #width and height of each tile
 
 
 
-def map_tiles(mapKeys):
-##	for key, value in mapKeys.items():
-##		print(key, value)
+def map_tiles(mapKeys): #returns a dict with the tile coords
+
+	#Init the value for the tile Coordinates Dictionary
 	tilesCoordinates = {}
 
+	#save the key as the tile type and get the 'tile' set of coordinates from map
+	# then add them to a dict
 	for key, value in mapKeys.items():
 		tile = key
 
@@ -79,11 +81,16 @@ if __name__ == '__main__':
 		for x, tile in enumerate(row):
 			for k in tileImageCoords:
 				try:
+					#Take the tileImagesCoords for each of the key on the string version of the map and 
+					# uses it as X and Y, since every tile is a key it works :)
 					screen.blit(table[tileImageCoords[tile][1]][tileImageCoords[tile][0]], (x*32, y*32))
+
 				except KeyError as e:
+					#If there was a tile that does not have a coordinate value default to the wall
 					screen.blit(table[6][0], (x*32, y*32))
 				
 
+	#Starts the main loop to display the screen
 	mainLoop = True
 
 	while mainLoop:
